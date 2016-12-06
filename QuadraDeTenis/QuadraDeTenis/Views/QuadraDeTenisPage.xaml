@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:QuadraDeTenis" 
+		x:Class="QuadraDeTenis.QuadraDeTenisPage"
+		Title="{Binding Texto}"
+		IsBusy="{Binding IsBusy}">
+
+	<ContentPage.Content>
+		 <StackLayout>
+			
+			<StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Spacing="10" Padding="10" IsVisible="{Binding IsBusy}">
+                <StackLayout.Orientation>
+                    <OnPlatform x:TypeArguments="StackOrientation" iOS="Horizontal" Android="Horizontal" WinPhone="Vertical"/>               
+                </StackLayout.Orientation>
+                <ActivityIndicator  HorizontalOptions="Center"
+								   IsRunning="{Binding IsBusy}"
+								   IsVisible="{Binding IsBusy}"/>
+                <Label HorizontalOptions="Center"
+			    	 VerticalOptions="Center"
+			    	 Text="Loading..."/>
+            </StackLayout>
+			
+			<ListView x:Name="lstView" HasUnevenRows="true" ItemsSource="{Binding quadras}" RefreshCommand="{Binding GetStoresCommand}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							
+							<Grid>
+								<StackLayout Orientation="Vertical" >
+									<Image Source="{Binding First.imageUrl}" WidthRequest="140" HeightRequest="140" Aspect="Fill" >
+									</Image>
+									<Image Margin="0,-28,0,0" WidthRequest="40" HeightRequest="40" HorizontalOptions="Start" Source="ic_arrow_drop_up_white_24dp.png" ></Image>
+									<Label Margin="0,-15,0,0" Font="Bold,16" Text="{Binding First.descricao}"/>
+									<Label Text="{Binding First.endereco}"/>
+									<Label Text="{Binding First.rating}"/>
+
+									<StackLayout Orientation="Horizontal">
+										<Label Text="{Binding First.details.result.formatted_phone_number}"/>
+										<Button Margin="0,0,0,20" Text="Ligar" IsVisible="{Binding First.showCallButton}" Clicked="btnDetails_Clicked" CommandParameter="{Binding First.details.result.formatted_phone_number}" ></Button>
+									</StackLayout>
+									
+
+								</StackLayout>
+
+								<StackLayout Grid.Column="1" Orientation="Vertical" >
+									<Image Source="{Binding Second.imageUrl}" WidthRequest="140" HeightRequest="140" Aspect="Fill" >
+									</Image>
+									<Image Margin="0,-28,0,0" WidthRequest="40" HeightRequest="40" HorizontalOptions="Start" Source="ic_arrow_drop_up_white_24dp.png" ></Image>
+									<Label Margin="0,-15,0,0" Font="Bold,16" Text="{Binding Second.descricao}"/>
+									<Label Text="{Binding Second.endereco}"/>
+									<Label Text="{Binding Second.rating}"/>
+									<StackLayout Orientation="Horizontal">
+										<Label Text="{Binding Second.details.result.formatted_phone_number}"/>
+										<Button Image="{ic_call_black_24dp.png}"  Margin="0,0,0,20" Text="Ligar" IsVisible="{Binding Second.showCallButton}" Clicked="btnDetails_Clicked" CommandParameter="{Binding Second.details.result.formatted_phone_number}" ></Button>
+									</StackLayout>
+
+								</StackLayout>
+							</Grid>
+		                </ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+	    </StackLayout>
+	</ContentPage.Content>
+
+
+</ContentPage>

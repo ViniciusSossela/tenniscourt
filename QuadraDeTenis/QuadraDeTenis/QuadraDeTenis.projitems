@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{C5E50036-5CAB-4D18-9C46-34E2981F901B}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>QuadraDeTenis</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\QuadraDeTenisPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\QuadraDetalhePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\QuadraDeTenisPage.xaml.cs">
+      <DependentUpon>QuadraDeTenisPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainViewCode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VeggieViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\QuadraService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Quadra.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\QuadraViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\QuadraDetalhePage.xaml.cs">
+      <DependentUpon>QuadraDetalhePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RestService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Interfaces\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+  </ItemGroup>
+</Project>
