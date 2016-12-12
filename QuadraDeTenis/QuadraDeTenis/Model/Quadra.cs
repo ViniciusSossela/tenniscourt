@@ -29,7 +29,7 @@ namespace QuadraDeTenis
 			set;
 		}
 
-		public bool showCallButton { get { return string.IsNullOrEmpty(details.result.formatted_phone_number) ? false : true; } }
+		public bool showCallButton { get { return string.IsNullOrEmpty(details.result?.formatted_phone_number) ? false : true; } }
 	}
 
 	public class QuadraListView

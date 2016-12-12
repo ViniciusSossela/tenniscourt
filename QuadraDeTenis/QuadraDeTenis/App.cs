@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Xamarin.Forms;
+using Xamarinos.AdMob.Forms;
 
 namespace QuadraDeTenis
 {
@@ -18,7 +19,7 @@ namespace QuadraDeTenis
 
 		}
 
-		protected override void OnStart()
+		protected async override void OnStart()
 		{
 			// Handle when your app starts
 		}

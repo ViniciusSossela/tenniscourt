@@ -20,7 +20,7 @@
 			    	 VerticalOptions="Center"
 			    	 Text="Loading..."/>
             </StackLayout>
-			
+
 			<ListView x:Name="lstView" HasUnevenRows="true" ItemsSource="{Binding quadras}" RefreshCommand="{Binding GetStoresCommand}">
 				<ListView.ItemTemplate>
 					<DataTemplate>
@@ -37,7 +37,7 @@
 
 									<StackLayout Orientation="Horizontal">
 										<Label Text="{Binding First.details.result.formatted_phone_number}"/>
-										<Button Margin="0,0,0,20" Text="Ligar" IsVisible="{Binding First.showCallButton}" Clicked="btnDetails_Clicked" CommandParameter="{Binding First.details.result.formatted_phone_number}" ></Button>
+										<Button Image="ic_call_black_24dp.png" Margin="0,0,0,20" Text="Ligar" IsVisible="{Binding First.showCallButton}" Clicked="btnDetails_Clicked" CommandParameter="{Binding First.details.result.formatted_phone_number}" ></Button>
 									</StackLayout>
 									
 
@@ -52,7 +52,7 @@
 									<Label Text="{Binding Second.rating}"/>
 									<StackLayout Orientation="Horizontal">
 										<Label Text="{Binding Second.details.result.formatted_phone_number}"/>
-										<Button Image="{ic_call_black_24dp.png}"  Margin="0,0,0,20" Text="Ligar" IsVisible="{Binding Second.showCallButton}" Clicked="btnDetails_Clicked" CommandParameter="{Binding Second.details.result.formatted_phone_number}" ></Button>
+										<Button Image="ic_call_black_24dp.png" Margin="0,0,0,20" Text="Ligar" IsVisible="{Binding Second.showCallButton}" Clicked="btnDetails_Clicked" CommandParameter="{Binding Second.details.result.formatted_phone_number}" ></Button>
 									</StackLayout>
 
 								</StackLayout>
@@ -61,6 +61,8 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
+
+			<local:AdMobView WidthRequest="320" HeightRequest="50" />
 	    </StackLayout>
 	</ContentPage.Content>
 

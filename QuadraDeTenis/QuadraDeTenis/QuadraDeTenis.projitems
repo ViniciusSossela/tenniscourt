@@ -30,6 +30,7 @@
       <DependentUpon>QuadraDetalhePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Services\RestService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\AdMobView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />

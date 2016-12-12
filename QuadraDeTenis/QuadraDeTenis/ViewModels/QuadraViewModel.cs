@@ -16,7 +16,7 @@ namespace QuadraDeTenis
 		public QuadraViewModel(Page page) : base(page)
 		{
 			quadraService = DependencyService.Get<IService>();
-			Texto = "Quadras de Tennis";
+			Texto = "Quadras de Tênis";
 			quadras = new ObservableRangeCollection<QuadraListView>();
 		}
 
@@ -40,13 +40,8 @@ namespace QuadraDeTenis
 				{
 					Device.OpenUri(new Uri("tel:054-99199924"));
 
+					//page.Navigation.PushAsync(new QuadraDetalhePage(null));
 
-					page.Navigation.PushAsync(new QuadraDetalhePage(null));
-
-
-
-
-						//await page.DisplayAlert("Uh Oh :(", "Unable to gather stores.", "OK");
 				}));
 			}
 		}
@@ -88,8 +83,8 @@ namespace QuadraDeTenis
 					{
 						quadrasListView.Add(new QuadraListView
 						{
-							First = results.Length >= i ? results[i] : null,
-							Second = results.Length >= i + 1 ? results[i + 1] : null
+							First = results.Length >= i ? results[i] : new Quadra(),
+							Second = results.Length >= i + 1 ? results[i + 1] : new Quadra()
 						});
 						i++;
 					}
