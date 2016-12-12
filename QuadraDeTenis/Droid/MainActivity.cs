@@ -24,7 +24,7 @@ namespace QuadraDeTenis.Droid
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 
-			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+			//Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 
 
 			//AdBannerRenderer.Init();

@@ -11,11 +11,11 @@ namespace QuadraDeTenis
 	{
 		public string Texto { get; set; }
 		public ObservableRangeCollection<QuadraListView> quadras { get; set; }
-		readonly IService quadraService;
+		//readonly IService quadraService;
 
 		public QuadraViewModel(Page page) : base(page)
 		{
-			quadraService = DependencyService.Get<IService>();
+			//quadraService = DependencyService.Get<IService>();
 			Texto = "Quadras de Tênis";
 			quadras = new ObservableRangeCollection<QuadraListView>();
 		}
